@@ -1,6 +1,7 @@
 # fastapi-mongodb-testdriven
-Minimal API based app using MongoDB as backend
-From: https://testdriven.io/blog/fastapi-mongo/
+Minimal API based app using MongoDB as backend.
+
+Reference: https://testdriven.io/blog/fastapi-mongo/
 
 ### Local Setup
 
