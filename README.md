@@ -13,8 +13,3 @@ pip install --upgrade pip
 # install project's requirements
 pip install -r requirements.txt
 ```
-
-### To Do
-- Validation in model does not apply to updates
-- put credentials into `.env`
-- in `database.py` read from `.env`
