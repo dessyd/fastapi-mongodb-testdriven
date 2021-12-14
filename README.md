@@ -16,3 +16,5 @@ pip install -r requirements.txt
 
 ### To Do
 - Validation in model does not apply to updates
+- put credentials into `.env`
+- in `database.py` read from `.env`
