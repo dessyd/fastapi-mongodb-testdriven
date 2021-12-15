@@ -21,7 +21,7 @@ router = APIRouter(
     tags=['Students']
 )
 
-@router.post("/", status_code=status.HTTP_201_CREATED, response_description="Student added")
+@router.post("/", response_model=StudentSchema, status_code=status.HTTP_201_CREATED, response_description="Student added")
 async def add_student_data(student: StudentSchema = Body(...)):
     student = jsonable_encoder(student)
     new_student = await add_student(student)
@@ -30,7 +30,6 @@ async def add_student_data(student: StudentSchema = Body(...)):
 @router.get("/", response_model=List[StudentSchema], response_description="Students retrieved")
 async def get_students():
     students = await retrieve_students()
-    print(students)
     return students
 
 
