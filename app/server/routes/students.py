@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Body
+from fastapi import APIRouter, Body, Response, status, HTTPException
 from fastapi.encoders import jsonable_encoder
 
 from ..database import (
@@ -15,13 +15,16 @@ from ..models.student import (
     UpdateStudentModel,
 )
 
-router = APIRouter()
+router = APIRouter(
+    prefix="/students",
+    tags=['Students']
+)
 
-@router.post("/", response_description="Student data added into the database")
+@router.post("/", status_code=status.HTTP_201_CREATED, response_description="Student added")
 async def add_student_data(student: StudentSchema = Body(...)):
     student = jsonable_encoder(student)
     new_student = await add_student(student)
-    return ResponseModel(new_student, "Student added successfully.")
+    return new_student
 
 @router.get("/", response_description="Students retrieved")
 async def get_students():
