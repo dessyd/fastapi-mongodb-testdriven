@@ -12,7 +12,7 @@ services:
     volumes:
       - mongo_db:/data/db
     # ports:
-    #   - ${DATABASE_PORT}:${DATABASE_PORT}
+    #   - ${DATABASE_PORT}:27017
 
   mongo-express:
     image: mongo-express

@@ -3,6 +3,7 @@ from bson.objectid import ObjectId
 from .config import settings
 
 MONGO_DETAILS = f'{settings.database_driver}://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
+print(MONGO_DETAILS)
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
