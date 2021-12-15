@@ -1,7 +1,8 @@
 import motor.motor_asyncio
 from bson.objectid import ObjectId
+from .config import settings
 
-MONGO_DETAILS = "mongodb://root:example@mongo:27017"
+MONGO_DETAILS = f'{settings.database_driver}://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
