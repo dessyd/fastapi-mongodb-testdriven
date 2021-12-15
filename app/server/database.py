@@ -22,7 +22,7 @@ def student_helper(student) -> dict:
         "email": student["email"],
         "course_of_study": student["course_of_study"],
         "year": student["year"],
-        "GPA": student["gpa"],
+        "gpa": student["gpa"],
     }
 
 # Retrieve all students present in the database
