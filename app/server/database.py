@@ -3,10 +3,11 @@ from bson.objectid import ObjectId
 from .config import settings
 
 MONGO_DETAILS = f'{settings.database_driver}://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}'
+MONGO_DATABASE = f'{settings.database_name}'
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 
-database = client.students
+database = client[MONGO_DATABASE]
 
 student_collection = database.get_collection("students_collection")
 
